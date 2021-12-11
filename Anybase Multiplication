@@ -1,0 +1,80 @@
+                                                                                QUESTION
+1. You are given a base b.
+2. You are given two numbers n1 and n2 of base b.
+3. You are required to multiply n1 and n2 and print the value.
+
+             Input Format
+A base b
+A number n1
+A number n2
+
+            Output Format
+            
+A number of base b equal in value to n2 * n1.
+
+            Constraints
+2 <= b <= 10
+0 <= n1 <= 10000
+0 <= n2 <= 10000
+            Sample Input
+5
+1220
+31
+            Sample Output
+43320
+ 
+ *********************************************************************************************************************************************************************************
+                                                                               SOLUTION
+                                                                               
+ import java.util.*;
+
+public class Main{
+    
+    public static void main(String[]args) {
+        Scanner scn = new Scanner(System.in);
+        int b = scn.nextInt();
+        int n1 =  scn.nextInt();
+        int n2 = scn.nextInt();
+        int change_1 = decimal(n1,b);
+        int change_2 = decimal(n2,b);
+        int product = change_1 * change_2;
+        int final_result = anybase(product,b);
+        System.out.println(final_result);
+    }
+    
+    public static int decimal(int n,int b) {
+        int multiplier = 1;
+        int result = 0;
+        while(n>0) {
+            int rem = n%10;
+            int quo = n/10;
+            result += multiplier*rem;
+            multiplier *= b;
+            n = quo;
+            
+        }
+        return result;
+    }
+    public static int anybase(int n,int b) {
+        int multiplier = 1;
+        int result = 0;
+        while(n>0) {
+            int rem = n%b;
+            int quo = n/b;
+            result += multiplier*rem;
+            multiplier *= 10;
+            n = quo;
+            
+        }
+        return result;
+        
+        
+    }
+}
+
+    
+    
+    
+    
+    
+                                                                                  
