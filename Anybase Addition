@@ -4,7 +4,7 @@
 2. You are given two numbers n1 and n2 of base b.
 3. You are required to add the two numbes and print their value in base b.
            
-           Input Format
+            Input Format
 A base b
 A number n1
 A number n2
@@ -13,17 +13,17 @@ A number n2
             
 A number representing the sum of n1 and n2 in base b.
            
-           Constraints
+            Constraints
             
 2 <= b <= 10
 0 <= n1 <= 256
 0 <= n2 <= 256
           
-          Sample Input
+            Sample Input
 8
 777
 1
-          Sample Output
+            Sample Output
 1000
 
 *********************************************************************************************************************************************************************************
@@ -62,5 +62,6 @@ import java.util.*;
             
         }
         return result;
-  
+  }
+  }
   
