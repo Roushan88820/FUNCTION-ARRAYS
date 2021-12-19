@@ -1,0 +1,42 @@
+// DISCLAIMER :-ARRAY SHOULD BE SORTED IN ASCENDING ORDER ONLY THEN BINARY SEARCH WOULD BE POSSIBLE
+// binary search kii time complexity log base2 kii power n hota haii aurr yee linear search see bhutt fast hotaa hain.
+
+
+import java.io.*;
+import java.util.*;
+public class Main {
+    public static void main(String[]args)throws Exception{
+        
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        
+         int [] arr = new int[n];
+         
+         for(int i = 0; i<arr.length; i++) {
+             arr [i]= scn.nextInt();
+             
+         }
+         
+         int digit = scn.nextInt();
+         int high = arr.length - 1;
+         int low = 0;
+         int idx = -1;
+         while(low<=high) {
+             
+             int mid = (low + high)/2;
+             
+             if(arr[mid]>digit){
+                high = mid - 1;
+             } 
+             else if(arr[mid]<digit) {
+                 low = low + 1;
+             } 
+             else {
+                 idx = mid;
+                 System.out.println(idx);
+                 return;
+                 }   
+         }
+        System.out.println(idx);
+    }
+}
